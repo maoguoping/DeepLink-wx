@@ -1,6 +1,8 @@
 //app.js
+const request = require('./utils/request.js')
 App({
   onLaunch: function () {
+    this.$api = request.api;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

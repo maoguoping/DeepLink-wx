@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
 	"appid": "wxfdfd0eca106c382b",
-	"projectname": "wx-demo",
+	"projectname": "DeepLink-wx",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

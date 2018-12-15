@@ -1,0 +1,4 @@
+<!--pages/managerCenter/manageCenter.wxml-->
+<scroll-view>
+  <manage-list id="manageList" list="{{listData}}" bind:listTap="tapItem"></manage-list> 
+</scroll-view>
