@@ -1,0 +1,6 @@
+<!--pages/manager-center/manager-center.wxml-->
+<view class="page">
+  <scroll-view style='width:100%'>
+    <manage-list id="manageList" list="{{listData}}" bind:listTap="tapItem"></manage-list>
+  </scroll-view>
+</view>

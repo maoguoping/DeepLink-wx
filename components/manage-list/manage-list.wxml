@@ -1,0 +1,5 @@
+<!--components/manage-list/manage-list.wxml-->
+<view wx:for="{{listData}}" wx:key="item.id" class='manage-list-item' data-data="{{item}}" bindtap='itemTap'>
+  <view class='manage-list-item-name'>{{item.name}}</view>
+  <view class='manage-list-item-description'>{{item.description}}</view>
+</view>

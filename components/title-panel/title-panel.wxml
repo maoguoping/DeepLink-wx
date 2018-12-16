@@ -1,0 +1,9 @@
+<!--components/title-panel/title-panel.wxml-->
+<view class="title-panel">
+  <view>
+    <slot name="title"></slot>
+  </view>
+  <view>
+    <slot name="content"></slot>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "manage-list": "../../components/manage-list/manage-list"
+  }
+}

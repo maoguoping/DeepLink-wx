@@ -1,0 +1,6 @@
+<!--components/bar-chart/bar-chart.wxml-->
+<view class="bar-chart">
+  <view class="container">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

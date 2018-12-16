@@ -1,0 +1,9 @@
+/* components/bar-chart/bar-chart.wxss */
+.container{
+  width: 100%;
+  height: 400px;
+} 
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

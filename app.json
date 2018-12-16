@@ -2,9 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/managerCenter/manageCenter",
-    "pages/dataCenter/dataCenter",
-    "pages/userCenter/userCenter"
+    "pages/manager-center/manager-center",
+    "pages/data-center/data-center",
+    "pages/user-center/user-center"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,19 +25,19 @@
         "selectedIconPath": "images/home-active.png"
       },
       {
-        "pagePath": "pages/managerCenter/manageCenter",
+        "pagePath": "pages/manager-center/manager-center",
         "text": "管理中心",
         "iconPath": "images/detail.png",
         "selectedIconPath": "images/detail-active.png"
       },
       {
-        "pagePath": "pages/dataCenter/dataCenter",
+        "pagePath": "pages/data-center/data-center",
         "text": "数据中心",
         "iconPath": "images/line-chart.png",
         "selectedIconPath": "images/line-chart-active.png"
       },
       {
-        "pagePath": "pages/userCenter/userCenter",
+        "pagePath": "pages/user-center/user-center",
         "text": "用户中心",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user-active.png"
