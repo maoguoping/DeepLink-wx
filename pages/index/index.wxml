@@ -1,15 +1,14 @@
 <!--index.wxml-->
 <view class='page'>
-  <view class="container">
-    <view class="userinfo">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" style="width:100%">
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+  <van-tabs active="{{ active }}" bind:change="onChange" style="width:100%">
+    <van-tab title="热点">热点</van-tab>
+    <van-tab title="我的关注">我的关注</van-tab>
+    <van-tab title="我的关注">我的动态</van-tab>
+  </van-tabs>
+  <view style='margin-top:60px'>
+    <van-button type="default" bind:tap="viewActivity">查看活动</van-button>
   </view>
 </view>

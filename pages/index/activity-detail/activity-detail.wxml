@@ -1,0 +1,5 @@
+<!--pages/index/activity-detail/activity-detail.wxml-->
+<view class="page">
+  <web-view src="https://github.com/maoguoping">
+  </web-view>
+</view>

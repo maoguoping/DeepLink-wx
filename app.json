@@ -5,7 +5,8 @@
     "pages/manager-center/manager-center",
     "pages/data-center/data-center",
     "pages/user-center/user-center",
-    "pages/data-center/data-detail/data-detail"
+    "pages/data-center/data-detail/data-detail",
+    "pages/index/activity-detail/activity-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

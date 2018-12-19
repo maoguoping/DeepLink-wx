@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    active: 1
   },
   //事件处理函数
   bindViewTap: function() {
@@ -49,6 +50,19 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  //标签页切换
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.index + 1}`,
+      icon: 'none'
+    });
+  },
+  //活动页点击
+  viewActivity(){
+    wx.navigateTo({
+      url: './activity-detail/activity-detail'
     })
   }
 })
