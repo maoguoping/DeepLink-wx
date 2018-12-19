@@ -1,11 +1,6 @@
 <!--pages/data-center/data-center.wxml-->
 <view class="page">
   <scroll-view style='width:100%'>
-    <title-panel>
-      <view slot="title">柱状图</view>
-      <view slot="content">
-        <bar-chart></bar-chart>
-      </view>
-    </title-panel>
+    <van-button type="primary" bind:tap="viewDetail">查看详情</van-button>
   </scroll-view>
 </view>

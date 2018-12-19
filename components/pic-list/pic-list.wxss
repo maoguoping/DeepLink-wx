@@ -1,0 +1,6 @@
+.pic-list{
+  height: 100%;
+}
+.pic{
+  height: 100%;
+}

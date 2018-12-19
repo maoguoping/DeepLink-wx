@@ -1,5 +1,0 @@
-/* components/title-panel/title-panel.wxss */
-.title-panel {
-  padding: 15px;
-  border: 1px solid #eee;
-}

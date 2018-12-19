@@ -1,9 +1,6 @@
 // components/manage-list/manage-list.js
 Component({
   behaviors: ['wx://component-export'],
-  /**
-   * 组件的属性列表
-   */
   properties: {
     list:{
       type:Array,
@@ -15,24 +12,15 @@ Component({
       }
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     listData:[]
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
     itemTap(e){
       let data = e.currentTarget.dataset.data;
       this.triggerEvent('listTap', data, { bubbles: false, composed: false })
     }
   },
-
   lifetimes:{
     created() {
       console.log('组件create');

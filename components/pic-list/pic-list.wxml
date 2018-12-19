@@ -1,0 +1,11 @@
+<!--components/pic-list/pic-list.wxml-->
+<view class="pic-list">
+  <van-row style="width:100%">
+    <van-col span="6">
+      <slot name="pic" ></slot>
+    </van-col>
+    <van-col span="18">
+      <slot name="content"></slot>
+    </van-col>
+  </van-row>
+</view>

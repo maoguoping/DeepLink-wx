@@ -1,4 +1,4 @@
-// components/title-panel/title-panel.js
+// components/pic-list/pic-list.js
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持

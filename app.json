@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/manager-center/manager-center",
     "pages/data-center/data-center",
-    "pages/user-center/user-center"
+    "pages/user-center/user-center",
+    "pages/data-center/data-detail/data-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

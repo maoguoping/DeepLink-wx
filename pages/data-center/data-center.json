@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "title-panel": "../../components/title-panel/title-panel",
-    "bar-chart": "../../components/bar-chart/bar-chart"
+    "van-button": "../../miniprogram_npm/vant-weapp/button/index"
   }
 }

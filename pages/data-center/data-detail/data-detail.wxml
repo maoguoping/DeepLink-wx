@@ -1,0 +1,8 @@
+<!--pages/data-center/data-detail/data-detail.wxml-->
+<view class="page">
+   <van-panel title="柱状图" style="width:100%">
+      <view>
+        <bar-chart></bar-chart>
+      </view>
+    </van-panel>
+</view>
