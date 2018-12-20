@@ -1,6 +1,8 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "manage-list": "../../components/manage-list/manage-list"
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
+    "manage-list": "../../components/manage-list/manage-list",
+    "hover-menu":"../../components/hover-menu/hover-menu"
   }
 }

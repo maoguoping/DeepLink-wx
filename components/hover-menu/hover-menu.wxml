@@ -1,0 +1,4 @@
+<!--components/hover-menu/hover-menu.wxml-->
+<view class="hover-menu">
+    <slot></slot>
+</view>
