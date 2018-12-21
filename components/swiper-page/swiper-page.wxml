@@ -1,2 +1,37 @@
 <!--components/swiper-page/swiper-page.wxml-->
-<text>components/swiper-page/swiper-page.wxml</text>
+<view class='swiper-page' style='height:{{contentHeight}}px'>
+  <scroll-view scroll-y="true" style='height:{{contentHeight-3}}px;background:#eee'>
+    <view class='wrap-panel'>
+      <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="red">
+        <block wx:for-items="{{banner_url}}" wx:key="item.id">
+          <navigator url="../../pages/manage-center/manage-center">
+            <swiper-item>
+              <block wx:if="{{item}}">
+                <image class="imgw" src="{{item.url}}" mode="aspectFill" />
+              </block>
+              <block wx:else>
+                <image src="../../images/project.png" mode="aspectFill"></image>
+              </block>
+            </swiper-item>
+          </navigator>
+        </block>
+      </swiper>
+    </view>
+    <view class='link-panel'>
+      <button class="link-btn">排行</button>
+      <button class="link-btn">最近</button>
+      <button class="link-btn">收藏</button>
+      <button class="link-btn">通知</button>
+    </view>
+    <view class='list-view'>
+      <view class='list-item' wx:for="{{list}}" wx:key="{{item.id}}" >
+        <pic-list>
+        <view slot="pic">{{item.id}}</view>
+        <view slot="content">
+          <button bind:tap="delete" data-id="{{item.id}}">移除</button>
+        </view>
+      </pic-list>
+      </view>
+    </view>
+  </scroll-view>
+</view>

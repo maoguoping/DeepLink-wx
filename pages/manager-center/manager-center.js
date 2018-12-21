@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData:[]
+    listData:[],
+    showEditProject:false,
+    showHoverMenu:true
   },
 
   /**
@@ -90,9 +92,33 @@ Page({
       this.loading = false;
     });
   },
+  /**
+   * 用户点击列表
+   */
   tapItem(e){
     let manageList = this.selectComponent('#manageList');
     console.log(e);
     console.log(manageList )
+  },
+   /**
+   * 用户点击新增按钮
+   */
+  add(){
+    this.setData({
+      showHoverMenu:false,
+      showEditProject:true
+    },()=>{
+      console.log(this.data.showEditProject);
+    })
+  },
+  closeDialog(event){
+    let data = event.detail;
+    this.setData({
+      showHoverMenu:true
+    },()=>{
+      if(data.update){
+        this.loadData();
+      }
+    });
   }
 })

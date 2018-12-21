@@ -1,1 +1,30 @@
 /* components/swiper-page/swiper-page.wxss */
+.swiper-page{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+.wrap-panel{
+  width: 100%;
+  height: 150px;
+}
+.link-panel{
+  width: 100%;
+  height: 80px;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+.link-btn{
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+.imgw{
+  width:100%;
+  height: 150px;
+}
+.list-item{
+  height: 80px;
+  border: 1px solid #ddd;
+}

@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "pic-list":"../pic-list/pic-list"
+  }
 }

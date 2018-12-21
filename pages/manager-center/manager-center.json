@@ -3,6 +3,7 @@
   "usingComponents": {
     "van-icon": "../../miniprogram_npm/vant-weapp/icon/index",
     "manage-list": "../../components/manage-list/manage-list",
-    "hover-menu":"../../components/hover-menu/hover-menu"
+    "hover-menu":"../../components/hover-menu/hover-menu",
+    "edit-project":"../../components/edit-project/edit-project"
   }
 }

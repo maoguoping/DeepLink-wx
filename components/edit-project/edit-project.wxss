@@ -1,0 +1,18 @@
+/* components/edit-project/edit-project.wxss */
+.group{
+  margin: 10px 0；
+}
+.dialog-btn{
+  width: 50%;
+  display: inline-block;
+  font-size: 14px;
+  border-radius:0; 
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  margin-bottom: -5px;
+  padding: 0;
+}
+.primary-btn{
+  background-color:#44BB00; 
+}
