@@ -1,26 +1,29 @@
+const computedBehavior = require('miniprogram-computed');
 module.exports = Behavior({
-  behaviors: [],
+  behaviors: [computedBehavior],
   properties: {
 
   },
   data: {
-    
+    $form: {}
   },
-  attached() { },
+  attached() {},
   methods: {
     $validate(callback) {
       let $validator = this.data.$validator;
+      let $form = this.data.$form;
       let totalFlag = true;
       let promiseArr = [];
-      $validator.$list.forEach((item,index)=>{
+      $validator.$list.forEach((item, index) => {
         let formName = $validator.$model;
         let value = this.data[formName][item.name];
         console.log(this.data)
-        let res = new Promise((resolve,reject)=>{
+        let res = new Promise((resolve, reject) => {
           item.cb(value, (valid, msg) => {
+            console.log(valid, msg)
             if (!valid) {
-              $validator.$list[index].error = true;
-              $validator.$list[index].msg = msg;
+              $form[item.name].error = true;
+              $form[item.name].msg = msg;
               totalFlag = false;
             }
             resolve();
@@ -28,44 +31,54 @@ module.exports = Behavior({
         })
         promiseArr.push(res);
       });
-      Promise.all(promiseArr).then(()=>{
+      Promise.all(promiseArr).then(() => {
+        console.log(totalFlag);
         this.setData({
-          $validator
-        },()=>{
+          $form
+        }, () => {
+          console.log(this.data.$form);
           callback(totalFlag);
         });
-      }).catch((e)=>{
+      }).catch((e) => {
         console.log(e);
-      }) 
+      })
+
+
     },
-    $reset(){
-      let $validator = this.data.$validator;
-      $validator.$list.forEach((item, index) => {
-        item.error = false;
-        item.msg = '';
+    $reset() {
+      let $form = this.data.$form;
+      Object.keys($form).forEach((item) => {
+        $form[item].error = false;
+        $form[item].msg = '';
       });
       this.setData({
-        $validator
+        $form
       });
     }
   },
-  lifetimes:{
-    created(){
+  lifetimes: {
+    created() {
       console.log('validate-behavior:Created');
-      let $validator = this.data.$validator;
-      $validator.$list.forEach((item,index) => {
-        Object.defineProperty($validator, item.name, {
-          configurable: false,
-          enumerable: true,
-          get: function proxyGetter() {
-            return {
-              error:!!item.error,
-              msg: item.msg ||''
-            };
-          }
-        })
-      });
-      this.$validator = $validator;
     }
+  },
+  definitionFilter(defFields, definitionFilterArr) {
+    console.log('definitionFilter:defFields', defFields);
+    console.log('definitionFilter:definitionFilterArr', definitionFilterArr);
+    let data = defFields.data;
+    let $validator = data.$validator;
+    let form = {};
+    $validator.$list.forEach((item, index) => {
+      Object.defineProperty(form, item.name, {
+        configurable: false,
+        enumerable: true,
+        get(){
+          return {
+            error: !!item.error,
+            msg: item.msg || ''
+          };
+        }
+      })
+    });
+    data.$form = form;
   }
 })

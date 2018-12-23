@@ -12,8 +12,6 @@ Component({
     }
   },
   data: {
-    name: null,
-    description: null,
     formData: {
       name: '',
       description: ''
@@ -25,11 +23,12 @@ Component({
         cb: (newVal, next) => {
           console.log(newVal);
           if (newVal == '') {
+            console.log(newVal,1);
             next(false, '项目名称不能为空！');
           } else {
+            console.log(newVal,2);
             next(true);
           }
-
         }
       }, {
         name: 'description',
@@ -63,6 +62,7 @@ Component({
             this.setData({
               show: false
             },()=>{
+              console.log(this.data);
               this.triggerEvent('close', {update:true}, { bubbles: false, composed: false })
             });
           }, 1000);

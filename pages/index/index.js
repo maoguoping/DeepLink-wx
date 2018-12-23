@@ -60,7 +60,7 @@ Page({
     });
   },
   //活动页点击
-  viewActivity(){
+  onSearch(){
     wx.navigateTo({
       url: './activity-detail/activity-detail'
     })

@@ -4,6 +4,7 @@
   "description": "DeepLink微信小程序",
   "main": "app.js",
   "dependencies": {
+    "miniprogram-computed": "0.0.6",
     "vant-weapp": "^0.4.10"
   },
   "devDependencies": {},

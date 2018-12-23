@@ -18,6 +18,7 @@ Component({
   methods: {
     itemTap(e){
       let data = e.currentTarget.dataset.data;
+      console.log(this);
       this.triggerEvent('listTap', data, { bubbles: false, composed: false })
     }
   },

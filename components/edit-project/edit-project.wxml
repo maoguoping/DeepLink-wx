@@ -2,7 +2,7 @@
 <view class="edit-project">
   <van-dialog use-slot  show="{{ show }}" showConfirmButton="{{false}}" title="新增项目">
     <van-cell-group class="group">
-      <van-field value="{{ formData.name }}" label="项目名称:" placeholder="请输入项目名称" error="{{$validator.name.error}}"  error-message="{{$validator.name.msg}}" bind:change="onNameChange"/>
+      <van-field value="{{ formData.name }}" label="项目名称:" placeholder="请输入项目名称" error="{{$form.name.error}}"  error-message="{{$form.name.msg}}" bind:change="onNameChange"/>
       <van-field value="{{ formData.description }}" type="textarea" label="项目描述:" :border="false" autosize placeholder="请输入描述" bind:change='onDescriptionChange'/> 
     </van-cell-group>
     <button class='dialog-btn' bind:tap='cancleFun'>取消</button>    

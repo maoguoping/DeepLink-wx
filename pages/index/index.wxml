@@ -9,6 +9,6 @@
     <van-tab title="我的关注"><swiper-page top="90" class="swiper-page"></swiper-page></van-tab>
   </van-tabs>
   <!-- <view style='margin-top:60px'>
-    <van-button type="default" bind:tap="viewActivity">查看活动</van-button>
+    <van-button type="default">查看活动</van-button>
   </view> -->
 </view>
