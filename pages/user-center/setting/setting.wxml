@@ -1,0 +1,4 @@
+<!--pages/user-center/setting/setting.wxml-->
+<view class='page'>
+<setting-block generic:content="van-checkbox"></setting-block>
+</view>

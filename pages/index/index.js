@@ -61,8 +61,5 @@ Page({
   },
   //活动页点击
   onSearch(){
-    wx.navigateTo({
-      url: './activity-detail/activity-detail'
-    })
   }
 })

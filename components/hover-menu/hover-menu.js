@@ -30,4 +30,18 @@ Component({
       }
     }
   },
+  lifetimes:{
+    created(){
+      console.log("悬浮菜单：created");
+    },
+    attached(){
+      console.log("悬浮菜单：attached");
+    },
+    ready() {
+      console.log("悬浮菜单：ready");
+    },
+    detached() {
+      console.log("悬浮菜单：detached");
+    }
+  }
 })

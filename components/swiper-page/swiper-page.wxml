@@ -4,7 +4,7 @@
     <view class='wrap-panel'>
       <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="red">
         <block wx:for-items="{{banner_url}}" wx:key="item.id">
-          <navigator url="../../pages/manage-center/manage-center">
+          <navigator url="../../pages/index/activity-detail/activity-detail">
             <swiper-item>
               <block wx:if="{{item}}">
                 <image class="imgw" src="{{item.url}}" mode="aspectFill" />

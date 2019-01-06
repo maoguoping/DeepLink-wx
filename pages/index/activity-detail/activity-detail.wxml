@@ -1,6 +1,5 @@
 <!--pages/index/activity-detail/activity-detail.wxml-->
 <view class="page">
-  <web-view src="http://39.104.124.205/wx-activity" bind:message="getMsg">
+  <web-view src="{{url}}" bindmessage="getMsg" bindload="getLoad">
   </web-view>
-  <van-notify id="van-notify" />
 </view>

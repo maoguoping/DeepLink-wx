@@ -17,7 +17,11 @@ Component({
     }
   },
   lifetimes: {
+    created() {
+      console.log("悬浮按钮：created");
+    },
     attached() {
+      console.log("悬浮按钮：attached");
       let path = plusIcoPath;
       switch (this.data.type) {
         case 'plus':
@@ -30,6 +34,12 @@ Component({
       this.setData({
         icoPath: path
       });
+    },
+    ready() {
+      console.log("悬浮按钮：ready");
+    },
+    detached() {
+      console.log("悬浮按钮：detached");
     }
   },
   relations: {

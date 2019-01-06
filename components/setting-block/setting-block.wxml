@@ -1,0 +1,6 @@
+<!--components/setting-block/setting-block.wxml-->
+<view class='setting-block'>
+  <view>
+    <content  value="{{value}}" bind:change="changeContent">选择项</content>
+  </view>
+</view>

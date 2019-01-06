@@ -11,6 +11,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+   <navigator url='./setting/setting'>设置</navigator>
 </view>
 </view>
 

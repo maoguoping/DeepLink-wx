@@ -1,6 +1,7 @@
 // pages/manager-center/manager-center.js
 const _this = getApp();
 const $api = _this.$api
+const $listjson = require('../../data/manage-list-data').data;
 Page({
 
   /**
@@ -15,61 +16,62 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    console.log("管理中心:onLoad");
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady() {
+    console.log("管理中心:onReady");
     this.loadData();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow() {
+    console.log("管理中心:onShow");
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
+  onHide() {
+    console.log("管理中心:onHide");
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
+  onUnload() {
+    console.log("管理中心:onUnload");
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh() {
     if (!this.loading) {
-     this.loadData().then(()=>{
-       // 处理完成后，终止下拉刷新
-       wx.stopPullDownRefresh();
-     });
+    //  this.loadData().then(()=>{
+    //    // 处理完成后，终止下拉刷新
+    //    wx.stopPullDownRefresh();
+    //  });
     }
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom() {
     console.log('update');
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage() {
 
   },
   loadData(){

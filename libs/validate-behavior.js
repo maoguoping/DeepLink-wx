@@ -1,6 +1,7 @@
 const computedBehavior = require('miniprogram-computed');
+const middleBehavior = require('middle-behavior');
 module.exports = Behavior({
-  behaviors: [computedBehavior],
+  behaviors: [computedBehavior, middleBehavior],
   properties: {
 
   },
@@ -82,3 +83,4 @@ module.exports = Behavior({
     data.$form = form;
   }
 })
+
