@@ -1,5 +1,5 @@
 // pages/index/activity-detail/activity-detail.js
-import Notify from '../../../miniprogram_npm/vant-weapp/notify/notify';
+import Notify from '../../../miniprogram_npm/@vant/weapp/notify/notify';
 const app = getApp();
 Page({
   data: {

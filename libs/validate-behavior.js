@@ -1,4 +1,4 @@
-const computedBehavior = require('miniprogram-computed');
+const computedBehavior = require('miniprogram-computed').behavior;
 const middleBehavior = require('middle-behavior');
 module.exports = Behavior({
   behaviors: [computedBehavior, middleBehavior],

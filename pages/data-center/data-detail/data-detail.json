@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "bar-chart": "../../../components/bar-chart/bar-chart",
-    "van-panel": "../../../miniprogram_npm/vant-weapp/panel/index"
+    "bar-chart": "../../../components/bar-chart/bar-chart"
   }
 }

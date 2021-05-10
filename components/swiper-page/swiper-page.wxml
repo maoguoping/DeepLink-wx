@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" style='height:{{contentHeight-3}}px;background:#eee'>
     <view class='wrap-panel'>
       <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="red">
-        <block wx:for-items="{{banner_url}}" wx:key="item.id">
+        <block wx:for-items="{{banner_url}}" wx:key="id">
           <navigator url="../../pages/index/activity-detail/activity-detail">
             <swiper-item>
               <block wx:if="{{item}}">
@@ -24,7 +24,7 @@
       <button class="link-btn">通知</button>
     </view>
     <view class='list-view'>
-      <view class='list-item' wx:for="{{list}}" wx:key="{{item.id}}" >
+      <view class='list-item' wx:for="{{list}}" wx:for-item="item" wx:key="id" >
         <pic-list>
         <view slot="pic">{{item.id}}</view>
         <view slot="content">

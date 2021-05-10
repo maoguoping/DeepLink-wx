@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "van-radio": "../../../miniprogram_npm/vant-weapp/radio/index",
-    "van-checkbox": "../../../miniprogram_npm/vant-weapp/checkbox/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
     "setting-block":"../../../components/setting-block/setting-block"
   }
 }

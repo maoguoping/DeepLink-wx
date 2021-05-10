@@ -1,5 +1,5 @@
 <!--components/manage-list/manage-list.wxml-->
-<view wx:for="{{listData}}" wx:key="item.id" class='manage-list-item' data-data="{{item}}" bindtap='itemTap'>
+<view wx:for="{{listData}}" wx:key="id" class='manage-list-item' data-data="{{item}}" bindtap='itemTap'>
   <pic-list>
     <view slot="pic">
       <image src="../../images/project.png" style='width:60px;height:60px'></image>

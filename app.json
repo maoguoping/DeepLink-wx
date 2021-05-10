@@ -16,7 +16,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "borderStyle": "#e44",
+    "borderStyle": "black",
     "backgroundColor": "#fff",
     "color": "#000",
     "selectedColor": "#1296db",
@@ -46,5 +46,6 @@
         "selectedIconPath": "images/user-active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
