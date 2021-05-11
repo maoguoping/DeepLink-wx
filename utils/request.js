@@ -4,7 +4,7 @@ class Api {
   }
   
   get(url,params){
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve,reject) => {
         wx.request({
           url: url,
           method:'get',
@@ -12,8 +12,8 @@ class Api {
           success:(result)=>{
             resolve(result.data);
           },
-          fail:(reject)=>{
-            reject(reject.errMsg);
+          fail:(err)=>{
+            reject(err.errMsg);
           }
         })
     })
@@ -27,8 +27,8 @@ class Api {
         success: (result) => {
           resolve(result.data);
         },
-        fail: (reject) => {
-          reject(reject.errMsg);
+        fail: (err) => {
+          reject(err.errMsg);
         }
       })
     })

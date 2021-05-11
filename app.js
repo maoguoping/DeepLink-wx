@@ -1,5 +1,6 @@
 //app.js
 const request = require('./utils/request.js')
+import { initInterfaceList } from './utils/interface'
 App({
   onLaunch: function () {
     this.$api = request.api;
@@ -7,12 +8,16 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    const accountInfo = wx.getAccountInfoSync()
+    this.globalData.envVersion = accountInfo.miniProgram.envVersion
+    this.globalData.$urls = initInterfaceList(this.globalData.envVersion)
+    console.log('getAccountInfoSync', accountInfo)
     // 登录
     wx.login({
       success: res => {
         console.log('登陆成功', res)
         this.globalData.loginCode = res.code
+        this.wxMiniProLogin(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -35,6 +40,13 @@ App({
           })
         }
       }
+    })
+  },
+  wxMiniProLogin(code) {
+    request.api.post(this.globalData.$urls.wxMiniProLogin, {
+      code
+    }).then((res) => {
+      console.log('服务器返回', res)
     })
   },
   globalData: {

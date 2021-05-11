@@ -1,7 +1,8 @@
 // pages/manager-center/manager-center.js
-const _this = getApp();
+const _this = getApp()
+const urls = _this.globalData.$urls
 const $api = _this.$api
-const $listjson = require('../../data/manage-list-data').data;
+const $listjson = require('../../data/manage-list-data').data
 Page({
 
   /**
@@ -76,7 +77,7 @@ Page({
   },
   loadData(){
     this.loading = true;
-    return $api.post('http://39.104.124.205/manageCenter/getViewDataByPathId', {
+    return $api.post(urls.getViewDataByPathId, {
       pathId: '',
       pageInfo: JSON.stringify({
         currentPage: 1,
