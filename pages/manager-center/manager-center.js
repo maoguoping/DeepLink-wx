@@ -79,12 +79,10 @@ Page({
     this.loading = true;
     return $api.post(urls.getViewDataByPathId, {
       pathId: '',
-      pageInfo: JSON.stringify({
-        currentPage: 1,
-        pageSize: 10,
-        sortBy: 'modifyTime',
-        order: 'descending'
-      })
+      currentPage: 1,
+      pageSize: 10,
+      sortBy: 'modifyTime',
+      order: 'DESC'
     }).then(res => {
       this.setData({
         listData: res.data.list

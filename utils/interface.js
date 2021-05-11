@@ -10,6 +10,7 @@ export const initInterfaceList = function(envVersion) {
   }
   console.log('api环境2', basePath)
   return {
+    wxLogin: `${basePath}/users/wxLogin`,
     wxMiniProLogin: `${basePath}/users/wxMiniProLogin`,
     getViewDataByPathId: `${basePath}/manageCenter/getViewDataByPathId`
   }

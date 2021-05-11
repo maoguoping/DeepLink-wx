@@ -47,9 +47,17 @@ App({
       code
     }).then((res) => {
       console.log('服务器返回', res)
+      this.globalData.token = res.token
+      if (res.token !== '') {
+        this.globalData.needLogin = false
+      } else {
+        this.globalData.needLogin = true
+      }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token: '',
+    needLogin: true
   }
 })

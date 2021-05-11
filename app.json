@@ -7,7 +7,8 @@
     "pages/user-center/user-center",
     "pages/data-center/data-detail/data-detail",
     "pages/index/activity-detail/activity-detail",
-    "pages/user-center/setting/setting"
+    "pages/user-center/setting/setting",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

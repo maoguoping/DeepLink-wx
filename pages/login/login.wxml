@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view>
+  <text>登录deeplink</text>
+  <van-cell-group>
+    <van-field
+      value="{{ username }}"
+      placeholder="请输入用户名"
+      border="{{ true }}"	
+      bind:change="onNameChange"
+    />
+    <van-field
+      value="{{ password }}"
+      password
+      border="{{ true }}"
+      placeholder="请输入密码"
+      bind:change="onPasswordChange"
+    />
+    <van-button type="info" bindtap="login">登录</van-button>
+  </van-cell-group>
+</view>
+

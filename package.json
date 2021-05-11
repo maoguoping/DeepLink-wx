@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "@vant/weapp": "^1.6.8",
+    "md5": "^2.3.0",
     "miniprogram-computed": "^4.0.4"
   },
   "devDependencies": {},
