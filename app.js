@@ -8,6 +8,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    this.initToken()
     const accountInfo = wx.getAccountInfoSync()
     this.globalData.envVersion = accountInfo.miniProgram.envVersion
     this.globalData.$urls = initInterfaceList(this.globalData.envVersion)
@@ -17,7 +18,7 @@ App({
       success: res => {
         console.log('登陆成功', res)
         this.globalData.loginCode = res.code
-        this.wxMiniProLogin(res.code)
+        // this.wxMiniProLogin(res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -41,6 +42,7 @@ App({
         }
       }
     })
+    this.getEntryOption()
   },
   wxMiniProLogin(code) {
     request.api.post(this.globalData.$urls.wxMiniProLogin, {
@@ -55,9 +57,29 @@ App({
       }
     })
   },
+  // 初始化登录token
+  initToken() {
+    const token = wx.getStorageSync('token') || ''
+    this.globalData.token = token
+  },
+  // 设置登录场景
+  getEntryOption() {
+    let entryRes = wx.getLaunchOptionsSync()
+    console.log('entryRes', entryRes)
+    this.globalData.scene = entryRes.scene
+  },
+  // 退出登录
+  logout() {
+    this.globalData.token = ''
+    wx.setStorageSync('token', '')
+    wx.redirectTo({
+      url: "/pages/login/login"
+    });
+  },
   globalData: {
     userInfo: null,
     token: '',
+    scene: '',
     needLogin: true
   }
 })

@@ -1,6 +1,7 @@
 // components/hover-menu/hover-menu-btn.js
 const plusIcoPath = '../../images/plus-circle.png';
 const infoIcoPath = '../../images/info-circle.png';
+const leftIcoPath = '../../images/left-circle.png';
 Component({
   properties: {
     type: {
@@ -29,6 +30,9 @@ Component({
           break;
         case 'info':
           path = infoIcoPath;
+          break;
+        case 'left':
+          path = leftIcoPath;
           break;
       }
       this.setData({

@@ -1,11 +1,19 @@
 <!--pages/manager-center/manager-center.wxml-->
 <view class="page">
   <scroll-view style='width:100%'>
-    <manage-list id="manageList" list="{{listData}}" bind:listTap="tapItem"></manage-list>
+    <view wx:if="{{listData.length > 0 && !isLoading}}">
+      <manage-list id="manageList" list="{{listData}}" bind:listTap="tapItem"></manage-list>
+    </view>
+    <view wx:if="{{listData.length === 0 && !isLoading}}">
+      <view class="no-data-box">
+        <text>暂无数据</text>
+      </view>
+    </view>
   </scroll-view>
   <hover-menu show ="{{showHoverMenu}}">
-     <hover-menu-btn type="plus" bind:btnTap="add"></hover-menu-btn>
-     <hover-menu-btn type="info"></hover-menu-btn>
+    <hover-menu-btn type="plus" bind:btnTap="add"></hover-menu-btn>
+    <hover-menu-btn type="info"></hover-menu-btn>
+    <hover-menu-btn wx:if="{{pathId!==''}}" type="left" bind:btnTap="back"></hover-menu-btn>
   </hover-menu>
   <edit-project show="{{showEditProject}}" bind:close="closeDialog"></edit-project>  
 </view>

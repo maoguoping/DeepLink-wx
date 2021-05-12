@@ -14,3 +14,10 @@
   font-size: 12px;
   color: #8e908c;
 }
+.no-data-box {
+  width: 750rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

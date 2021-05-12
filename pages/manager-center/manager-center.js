@@ -11,7 +11,9 @@ Page({
   data: {
     listData:[],
     showEditProject:false,
-    showHoverMenu:true
+    showHoverMenu:true,
+    pathId: '',
+    isLoading: true
   },
 
   /**
@@ -54,7 +56,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    if (!this.loading) {
+    if (!this.isLoading) {
     //  this.loadData().then(()=>{
     //    // 处理完成后，终止下拉刷新
     //    wx.stopPullDownRefresh();
@@ -76,30 +78,38 @@ Page({
 
   },
   loadData(){
-    this.loading = true;
+    this.isLoading = true;
     return $api.post(urls.getViewDataByPathId, {
-      pathId: '',
+      pathId: this.data.pathId,
       currentPage: 1,
       pageSize: 10,
       sortBy: 'modifyTime',
       order: 'DESC'
     }).then(res => {
       this.setData({
-        listData: res.data.list
+        listData: res.data.list,
+        isLoading: false
       });
     }).catch(err =>{
+      this.setData({
+        listData: [],
+        isLoading: false
+      });
       console.log(err)
-    }).then(()=>{
-      this.loading = false;
-    });
+    })
   },
   /**
    * 用户点击列表
    */
   tapItem(e){
     let manageList = this.selectComponent('#manageList');
-    console.log(e);
-    console.log(manageList )
+    console.log('列表点击事件', e)
+    let pathId = e.detail.pathId
+    this.setData({
+      pathId
+    }, () => {
+      this.loadData()
+    })
   },
    /**
    * 用户点击新增按钮
@@ -111,6 +121,23 @@ Page({
     },()=>{
       console.log(this.data.showEditProject);
     })
+  },
+   /**
+   * 用户点击返回按钮
+   */
+  back() {
+    let pathId = this.data.pathId
+    console.log('back', pathId)
+    if (pathId !== '') {
+      let pathArr = pathId.split('/')
+      let newPathId = pathArr.slice(0, pathArr.length - 1).join('/')
+      console.log('newPathId', newPathId)
+      this.setData({
+        pathId: newPathId
+      }, () => {
+        this.loadData()
+      })
+    }
   },
   closeDialog(event){
     let data = event.detail;

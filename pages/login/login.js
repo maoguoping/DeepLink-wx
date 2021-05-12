@@ -31,6 +31,7 @@ Page({
       console.log('登录成功')
       app.globalData.token = res.token
       $api.setToken(res.token)
+      wx.setStorageSync('token', res.token)
       wx.switchTab({
         url: '/pages/index/index'
       })
